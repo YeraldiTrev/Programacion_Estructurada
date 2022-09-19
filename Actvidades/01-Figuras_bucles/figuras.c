@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/* Yeraldi Adolfo Treviño Herrera */
 int main()
 {
     /* Declaracion de variables */
