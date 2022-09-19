@@ -1,4 +1,4 @@
 #Carpetas a ignorar
 \.vscode
-# Extensiones a ignorar
+# Extensiones a ignorar 
 *.exe
