@@ -2,3 +2,6 @@
 \.vscode
 # Extensiones a ignorar 
 *.exe
+
+#Archivos a ignorar
+pruebas .c
