@@ -5,3 +5,4 @@
 
 #Archivos a ignorar
 prue.c
+*ejemplo.c
