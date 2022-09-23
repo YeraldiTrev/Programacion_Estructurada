@@ -6,12 +6,18 @@ int main()
     system("clear");
     int i,j,k,l,alumnos;
 
-    printf("Ingrese la cantidad de alumnos: ");
-    scanf("%d",&alumnos);
-    if(alumnos<=0)
+    do
     {
-        return 0;
+        printf("Ingrese la cantidad de alumnos: ");
+        scanf("%d",&alumnos);
+        if(alumnos<=1)
+        {
+            printf("La cantidad de alumnos debe ser superior a 1...\n");
+            continue;
+        }
+        break;
     }
+    while(1);
 
     int matriculas[alumnos];
     float calificaciones[alumnos][5], promedios[alumnos];
@@ -52,7 +58,7 @@ int main()
         printf("\n********** Alumno: %d **********\n",matriculas[i]);
         for(j=0;j<5;j++)
         {
-            printf("Calf %d: %3.2f\n",j+1,calificaciones[i][j]);
+            printf("Calificacion %d: %3.2f\n",j+1,calificaciones[i][j]);
         }
         printf("Promedio: %3.2f",promedios[i]);
         printf("\n");
