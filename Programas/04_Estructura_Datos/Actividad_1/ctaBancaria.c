@@ -24,22 +24,10 @@ struct CuentaBancaria
 #define PERSONAS 3
 int main()
 {  
-    int i,altas=2;
+    int i,altas=0;
     char opc,noCta[13];
     float saldos;
     struct CuentaBancaria cuentas[PERSONAS];
-    /*
-    strcpy(cuentas[0].noCuenta,"123456789012");
-    strcpy(cuentas[0].nombre,"Yeraldi Trevino");
-    cuentas[0].tipoTarjeta=1;
-    cuentas[0].saldo=19.20;
-    cuentas[0].estatus=1;
-    strcpy(cuentas[1].noCuenta,"123456789021");
-    strcpy(cuentas[1].nombre,"Adolfo Herrera");
-    cuentas[1].tipoTarjeta=2;
-    cuentas[1].saldo=19.78;
-    cuentas[1].estatus=0;
-    */
 
     do
     {
@@ -51,57 +39,68 @@ int main()
         if(opc=='1')
         {
             system("cls");
-            do
+            if(altas>=PERSONAS)
             {
-                printf("Ingresa el numero de cuenta: ");
-                fflush(stdin);
-                gets(cuentas[altas].noCuenta);
-                if(strlen(cuentas[altas].noCuenta)<12)
+                printf("Ya no hay mas cuentas libres....\n");
+                system("pause");
+                system("cls");
+            }
+            else
+            {
+                do
                 {
-                    printf("El numero de cuenta debe de ser de 12 digitos...\n");
-                    system("pause");
-                    system("cls");
-                    continue;
-                }
-                for(i=0;i<PERSONAS;i++)
-                {
-                    if(i==altas)
-                        continue;
-                    else if(strcmp(cuentas[altas].noCuenta,cuentas[i].noCuenta)==0)
+                    printf("Ingresa el numero de cuenta: ");
+                    fflush(stdin);
+                    scanf("%s",cuentas[altas].noCuenta);
+                    if(strlen(cuentas[altas].noCuenta)<12)
                     {
-                        printf("Numero de cuenta ya registrado...\n");
+                        printf("El numero de cuenta debe de ser de 12 digitos...\n");
                         system("pause");
                         system("cls");
-                        break;
+                        continue;
                     }
-                }
-                if(strcmp(cuentas[altas].noCuenta,cuentas[i].noCuenta)==0)
-                    continue;
-                break;
-            }while(1);
+                    for(i=0;i<PERSONAS;i++)
+                    {
+                        if(i==altas)
+                            continue;
+                        else if(strcmp(cuentas[altas].noCuenta,cuentas[i].noCuenta)==0)
+                        {
+                            printf("Numero de cuenta ya registrado...\n");
+                            system("pause");
+                            system("cls");
+                            break;
+                        }
+                    }
+                    if(strcmp(cuentas[altas].noCuenta,cuentas[i].noCuenta)==0)
+                    {
+                        continue;
+                    }
+                    break;
+                }while(1);
 
-            printf("Ingresa el nombre del beneficiario: ");
-            fflush(stdin);
-            gets(cuentas[altas].nombre);
+                printf("Ingresa el nombre del beneficiario: ");
+                fflush(stdin);
+                gets(cuentas[altas].nombre);
 
-            do
-            {
-                printf("Ingresa el tipo de tarjeta (1.Debito 2.Credito 3.Con chequera): ");
-                scanf("%d",&cuentas[altas].tipoTarjeta);
-                if(cuentas[altas].tipoTarjeta<1||cuentas[altas].tipoTarjeta>3)
+                do
                 {
-                    printf("Tipo de tarjeta no valida...\n");
-                    system("pause");
-                    system("cls");
-                    continue;
-                }
-                break;
-            }while(1);
-            cuentas[altas].saldo=0;
-            cuentas[altas].estatus=1;
-            system("pause");
-            system("cls");
-            altas++;   
+                    printf("Ingresa el tipo de tarjeta (1.Debito 2.Credito 3.Con chequera): ");
+                    scanf("%d",&cuentas[altas].tipoTarjeta);
+                    if(cuentas[altas].tipoTarjeta<1||cuentas[altas].tipoTarjeta>3)
+                    {
+                        printf("Tipo de tarjeta no valida...\n");
+                        system("pause");
+                        system("cls");
+                        continue;
+                    }
+                    break;
+                }while(1);
+                cuentas[altas].saldo=0;
+                cuentas[altas].estatus=1;
+                system("pause");
+                system("cls");
+                altas++;
+            }   
         }
         else if(opc=='2')
         {
