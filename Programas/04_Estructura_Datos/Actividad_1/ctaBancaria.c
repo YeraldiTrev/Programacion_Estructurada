@@ -21,7 +21,7 @@ struct CuentaBancaria
     float saldo;
     int estatus; // 1. Activo 0.Inactivo
 };
-#define PERSONAS 3
+#define PERSONAS 50
 int main()
 {  
     int i,altas=0;
