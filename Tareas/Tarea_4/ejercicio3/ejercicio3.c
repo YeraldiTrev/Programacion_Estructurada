@@ -8,7 +8,7 @@ int main()
     /* Declaracion de variables */
     char frase[51],pass[60];
     int i,j=0,palabras=1,caracter;
-    int noValidos[]={48,49,50,51,52,53,54,55,56,57,65,
+    int caracteresNoValidos[]={48,49,50,51,52,53,54,55,56,57,65,
     66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90};
 
     /* Pedidido y validacion de frase secreta */
@@ -37,6 +37,8 @@ int main()
         }
         break;
     }while(1);
+    system("cls");
+    printf("Frase secreta: %s\n",frase);
 
     /*Generador de contraseña
     Quitar espacios.*/
@@ -62,7 +64,7 @@ int main()
         caracter=33+rand()%(96-33+1);
         for(j=0;j<=36;j++)
         {
-            if(caracter!=noValidos[j])
+            if(caracter!=caracteresNoValidos[j])
             {
                 pass[i]=caracter;
                 break;
@@ -80,7 +82,7 @@ int main()
         caracter=33+rand()%(123-33+1);
         for(j=0;j<=36;j++)
         {
-            if(caracter!=noValidos[j])
+            if(caracter!=caracteresNoValidos[j])
             {
                 pass[i+2]=caracter;
                 break;
@@ -107,8 +109,7 @@ int main()
         else
             continue;
     }
-
-    printf("Frase secreta: %s\nContrase%ca generada %s",frase,164,pass);
+    printf("Contrase%ca generada %s",164,pass);
 
     return 0;
 }
