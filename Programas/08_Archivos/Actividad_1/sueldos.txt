@@ -1,0 +1,6 @@
+Nombre: Yeraldi Sueldo: 3476.98
+Nombre: Adolfo Sueldo: 7476.78
+Nombres: Pepito Sueldo: 1382.30
+Nombres: Pitito Sueldo: 6246.88
+Nombres: Penito Sueldo: 8686.81
+Nombres: Jotita Sueldo: 10875.83

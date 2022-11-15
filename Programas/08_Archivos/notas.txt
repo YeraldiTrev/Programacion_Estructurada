@@ -1,0 +1,11 @@
+rewind: recive el puntero del archivo. Se posiciona al inicio del archivo
+
+en archivos binarios
+
+
+fwrite(); escribe en el archivo
+fread(); lee la informacion del un archivo
+
+Ambos Reciben 4 parametros: direccion de memoria, tamaño en bytes de la variable a almacenar, numero de
+elementos a escribir en el archivo, y la variable FILE
+
